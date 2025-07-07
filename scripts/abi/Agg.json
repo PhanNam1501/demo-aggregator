@@ -1,0 +1,41 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address[]",
+                "name": "routers",
+                "type": "address[]"
+            },
+            {
+                "internalType": "address[]",
+                "name": "dexHandlers",
+                "type": "address[]"
+            },
+            {
+                "internalType": "address[]",
+                "name": "tokenIn",
+                "type": "address[]"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amountIn",
+                "type": "uint256"
+            },
+            {
+                "internalType": "bytes[]",
+                "name": "data",
+                "type": "bytes[]"
+            }
+        ],
+        "name": "swapMultiHop",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "amountOut",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]

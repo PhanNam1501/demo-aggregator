@@ -1,0 +1,51 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {IUniswapV3SwapRouter} from "./interfaces/IUniswapV3SwapRouter.sol";
+// import {IDexHandler} from "./interfaces/IDexHandler.sol";
+
+
+
+contract UniswapV3Handler {
+    function executeSwap(address router, bytes calldata data) public returns (uint256 amountOut) {
+        (
+            address tokenIn, 
+            address tokenOut,
+            uint24 fee,
+            address recipient,
+            uint256 deadline,
+            uint256 amountIn,
+            uint256 amountOutMinimum,
+            uint160 sqrtPriceLimitX96
+        ) = 
+            abi.decode(data, (address, address, uint24, address, uint256, uint256, uint256, uint160));
+        require(tokenIn == address(0x2ada5fADFdB0bce7156cd63ba36195A243B76b13));
+
+            
+        IUniswapV3SwapRouter.ExactInputSingleParams memory param = IUniswapV3SwapRouter.ExactInputSingleParams({
+            tokenIn: tokenIn,
+            tokenOut: tokenOut,
+            fee: fee,
+            recipient: recipient,
+            deadline: deadline,
+            amountIn: amountIn,
+            amountOutMinimum: amountOutMinimum,
+            sqrtPriceLimitX96: sqrtPriceLimitX96
+        });
+       
+        
+
+        amountOut = IUniswapV3SwapRouter(router).exactInputSingle(param);
+
+        // amountOut = IUniswapV3SwapRouter(router).exactInputSingle(param);
+        // (bool success, bytes memory data) = router.call(
+        //     abi.encodeWithSelector(
+        //         IUniswapV3SwapRouter.exactInputSingle.selector,
+        //         param
+        //     )
+        // );
+
+        // require(success, "Swap failed");
+    }
+}
