@@ -1,41 +1,72 @@
 [
     {
-        "inputs": [
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_factory",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "factory",
+      "outputs": [
+        {
+          "internalType": "contract IDexHandlerFactory",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
             {
-                "internalType": "address[]",
-                "name": "routers",
-                "type": "address[]"
+              "internalType": "address[]",
+              "name": "routers",
+              "type": "address[]"
             },
             {
-                "internalType": "address[]",
-                "name": "dexHandlers",
-                "type": "address[]"
+              "internalType": "uint8[]",
+              "name": "dexHandlerIds",
+              "type": "uint8[]"
             },
             {
-                "internalType": "address[]",
-                "name": "tokenIn",
-                "type": "address[]"
+              "internalType": "address[]",
+              "name": "tokenIn",
+              "type": "address[]"
             },
             {
-                "internalType": "uint256",
-                "name": "amountIn",
-                "type": "uint256"
+              "internalType": "uint256",
+              "name": "amountIn",
+              "type": "uint256"
             },
             {
-                "internalType": "bytes[]",
-                "name": "data",
-                "type": "bytes[]"
+              "internalType": "bytes[]",
+              "name": "data",
+              "type": "bytes[]"
             }
-        ],
-        "name": "swapMultiHop",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "amountOut",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
+          ],
+          "internalType": "struct SwapMultiHop",
+          "name": "params",
+          "type": "tuple"
+        }
+      ],
+      "name": "swapMultiHop",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
     }
-]
+  ]

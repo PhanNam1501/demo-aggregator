@@ -3,8 +3,8 @@ const hre = require("hardhat");
 // const fs = require('fs');
 require("dotenv").config();
 async function main() {
-  const Agg = await hre.ethers.deployContract("Aggregator", [process.env.FACTORY]);
-  console.log("Agg: ", Agg.address);
+  const Factory = await hre.ethers.deployContract("DexHandlerFactory");
+  console.log("Agg: ", Factory.address);
 }
 
 main().catch((error) => {

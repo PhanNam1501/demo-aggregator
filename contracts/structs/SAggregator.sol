@@ -12,3 +12,11 @@ struct UniswapV3SwapData{
     uint256 amountOutMin;
     uint160 sqrtPriceLimitX96;
 }
+
+struct SwapMultiHop {
+    address[] routers; 
+    uint8[] dexHandlerIds;
+    address[] tokenIn;
+    uint256 amountIn;
+    bytes[] data;
+}

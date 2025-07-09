@@ -39,8 +39,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\Aggregator.sol": {
-      "lastModificationDate": 1751884356929,
-      "contentHash": "a7f5c1e14f073039cbc65043d8822c01",
+      "lastModificationDate": 1752052438244,
+      "contentHash": "da1912b4725a488bc0db5ef2777073d5",
       "sourceName": "contracts/Aggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -69,7 +69,9 @@
       },
       "imports": [
         "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "./interfaces/IDexHandlerFactory.sol",
+        "./structs/SAggregator.sol"
       ],
       "versionPragmas": [
         "^0.8.24"
@@ -307,42 +309,9 @@
         "IUniswapV3SwapRouter"
       ]
     },
-    "D:\\ftech-company\\demo-aggregator\\contracts\\interfaces\\IDexHandler.sol": {
-      "lastModificationDate": 1751883936381,
-      "contentHash": "d41d8cd98f00b204e9800998ecf8427e",
-      "sourceName": "contracts/interfaces/IDexHandler.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "storageLayout"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [],
-      "artifacts": []
-    },
     "D:\\ftech-company\\demo-aggregator\\contracts\\UniswapV3Handler.sol": {
-      "lastModificationDate": 1751884368525,
-      "contentHash": "4662993375847e161423025b35f61130",
+      "lastModificationDate": 1752051487326,
+      "contentHash": "53d75a45dcc015aa3a40f210c39a46d4",
       "sourceName": "contracts/UniswapV3Handler.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -418,8 +387,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\structs\\SAggregator.sol": {
-      "lastModificationDate": 1751623488103,
-      "contentHash": "41b706de420459a3c88969de95004f3b",
+      "lastModificationDate": 1752052465939,
+      "contentHash": "909073cbeee0dfe0c0785e17cdc676a5",
       "sourceName": "contracts/structs/SAggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -607,6 +576,82 @@
       ],
       "artifacts": [
         "console"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\DexHandlerFactory.sol": {
+      "lastModificationDate": 1752031416683,
+      "contentHash": "98629a79fd167214a0fbd37e3c3bf1e6",
+      "sourceName": "contracts/DexHandlerFactory.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IDexHandlerFactory.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "DexHandlerFactory"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\interfaces\\IDexHandlerFactory.sol": {
+      "lastModificationDate": 1752030551551,
+      "contentHash": "627b2a52ea2cad94b255db800aa35373",
+      "sourceName": "contracts/interfaces/IDexHandlerFactory.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IDexHandlerFactory"
       ]
     }
   }

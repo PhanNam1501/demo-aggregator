@@ -18,7 +18,6 @@ async function main() {
 
     const token0 = new ethers.Contract(process.env.TOKENA, erc20Abi, wallet);
     const token1 = new ethers.Contract(process.env.TOKENB, erc20Abi, wallet);
-    console.log("token0: ", token0.address);
     const agg_address = process.env.AGGREGATOR;
 
     // console.log("Token0", await token0.balanceOf(process.env.PUBLIC_KEY));
@@ -35,7 +34,7 @@ async function main() {
 
 
 
-    const param = ethers.utils.defaultAbiCoder.encode(
+    const data = ethers.utils.defaultAbiCoder.encode(
         ["address", "address", "uint24", "address", "uint256", "uint256", "uint256", "uint160"],
         [
             process.env.TOKENA,
@@ -49,20 +48,20 @@ async function main() {
         ]
     );
 
-    console.log("namm");
+    const param = {
+        routers: [process.env.SWAP_ROUTER],
+        dexHandlerIds: [0],
+        tokenIn: [process.env.TOKENA],
+        amountIn: 10,
+        data: [data]
+    };
 
-    const dataPack = ethers.utils.defaultAbiCoder.encode(
-        ["bytes"],
-        [param]
+    console.log("Ready to swap");
+
+    const tx3 = await agg.swapMultiHop(
+        param, { gasLimit: 2e7, gasPrice: 3e10 }
     );
-    const tx3 = await agg.callStatic.swapMultiHop(
-        [process.env.SWAP_ROUTER],
-        [process.env.UNISWAPV3_HANDLER],
-        [process.env.TOKENA],
-        10,
-        [param], { gasLimit: 2e7, gasPrice: 3e10 }
-    );
-    // await tx3.wait();
+    await tx3.wait();
     console.log(tx3);
     console.log("Swap Done");
 

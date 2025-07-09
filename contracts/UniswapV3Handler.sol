@@ -20,9 +20,7 @@ contract UniswapV3Handler {
             uint160 sqrtPriceLimitX96
         ) = 
             abi.decode(data, (address, address, uint24, address, uint256, uint256, uint256, uint160));
-        require(tokenIn == address(0x2ada5fADFdB0bce7156cd63ba36195A243B76b13));
 
-            
         IUniswapV3SwapRouter.ExactInputSingleParams memory param = IUniswapV3SwapRouter.ExactInputSingleParams({
             tokenIn: tokenIn,
             tokenOut: tokenOut,
