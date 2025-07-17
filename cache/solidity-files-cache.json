@@ -39,8 +39,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\Aggregator.sol": {
-      "lastModificationDate": 1752743472749,
-      "contentHash": "e0d57d13e59a52d6169bbee904273eec",
+      "lastModificationDate": 1752745770632,
+      "contentHash": "c1dc12eee4b2ee5788a47fc88b86ae4b",
       "sourceName": "contracts/Aggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -391,8 +391,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\structs\\SAggregator.sol": {
-      "lastModificationDate": 1752743039594,
-      "contentHash": "ed625ce220da215a606f01fdf602e9b9",
+      "lastModificationDate": 1752744858963,
+      "contentHash": "be75cd82d54812a1ba05b37ffb26f438",
       "sourceName": "contracts/structs/SAggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -891,8 +891,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\AggregatorExecutor.sol": {
-      "lastModificationDate": 1752743104589,
-      "contentHash": "e3d4c975549947392a32bc3384db3d06",
+      "lastModificationDate": 1752744248861,
+      "contentHash": "1b09a7632d0a68e9f2d10774e491e84c",
       "sourceName": "contracts/AggregatorExecutor.sol",
       "solcConfig": {
         "version": "0.8.24",

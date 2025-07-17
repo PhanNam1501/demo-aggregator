@@ -50,13 +50,13 @@ contract Aggregator {
 
     receive() external payable {}
 
-    function getBalance(IERC20 token, address account) internal view returns(uint256) {
-        token.uniBalanceOf(account);
-    }
+    // function getBalance(IERC20 token, address account) internal view returns(uint256) {
+    //     token.uniBalanceOf(account);
+    // }
 
-    function isETH(IERC20 token) internal view returns (bool iseth) {
-        iseth = token.isETH();
-    }
+    // function isETH(IERC20 token) internal view returns (bool iseth) {
+    //     iseth = token.isETH();
+    // }
 
     function FlexSwap(
         IAggregatorExecutor executor,
@@ -70,15 +70,14 @@ contract Aggregator {
         IAggregatorExecutor executor,
         SwapMultiHop calldata params
     ) external returns(uint256 amountOut) {
-        executor.swapMultiHop(params, factory);
-    }
+        uint256 flag = params.flags;
+        IERC20 tokenOut = IERC20(params.tokenIn[params.tokenIn.length]);
 
-    function swapMultiRoute(
-        SwapMultiHop[] calldata params
-    ) external returns(uint256 amountOut) {
-        for (uint256 i = 0; i < params.length; i++) {
-            amountOut += swapMultiHop(params[i]);
-        }
+        uint256 balanceDstBefore = tokenOut.uniBalanceOf(msg.sender);
+        executor.swapMultiHop(params, factory);
+
+        uint256 balanceDstAfter = tokenOut.uniBalanceOf(msg.sender);
+
     }
     
 

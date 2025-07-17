@@ -33,9 +33,9 @@
               "type": "bytes[]"
             },
             {
-              "internalType": "bytes",
+              "internalType": "uint256",
               "name": "flags",
-              "type": "bytes"
+              "type": "uint256"
             }
           ],
           "internalType": "struct SwapMultiHop",

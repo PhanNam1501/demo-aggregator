@@ -18,5 +18,5 @@ struct SwapMultiHop {
     address[] tokenIn;
     uint256 amountIn;
     bytes[] data;
-    bytes flags;
+    uint256 flags;
 }
