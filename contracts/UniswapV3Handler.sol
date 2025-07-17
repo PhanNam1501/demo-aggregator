@@ -8,24 +8,23 @@ import {IUniswapV3SwapRouter} from "./interfaces/IUniswapV3SwapRouter.sol";
 
 
 contract UniswapV3Handler {
-    function executeSwap(address router, bytes calldata data) public returns (uint256 amountOut) {
+    function executeSwap(address router, bytes calldata data) external returns (uint256 amountOut) {
         (
             address tokenIn, 
             address tokenOut,
             uint24 fee,
-            address recipient,
             uint256 deadline,
             uint256 amountIn,
             uint256 amountOutMinimum,
             uint160 sqrtPriceLimitX96
         ) = 
-            abi.decode(data, (address, address, uint24, address, uint256, uint256, uint256, uint160));
+            abi.decode(data, (address, address, uint24, uint256, uint256, uint256, uint160));
 
         IUniswapV3SwapRouter.ExactInputSingleParams memory param = IUniswapV3SwapRouter.ExactInputSingleParams({
             tokenIn: tokenIn,
             tokenOut: tokenOut,
             fee: fee,
-            recipient: recipient,
+            recipient: address(this),
             deadline: deadline,
             amountIn: amountIn,
             amountOutMinimum: amountOutMinimum,

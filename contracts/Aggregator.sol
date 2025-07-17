@@ -4,11 +4,30 @@ pragma solidity ^0.8.24;
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {IDexHandlerFactory} from "./interfaces/IDexHandlerFactory.sol";
+import {IAggregatorExecutor} from "./interfaces/IAggregatorExecutor.sol";
 import {SwapMultiHop} from "./structs/SAggregator.sol";
+import {Address} from "./libraries/Address.sol";
+import {SafeERC20} from "./libraries/SafeERC20.sol";
+import {UniERC20} from "./libraries/UniERC20.sol";
+
 
 
 contract Aggregator {
+    using Address for address;
+    using SafeERC20 for IERC20;
+    using UniERC20 for IERC20;
+
+    uint256 private constant _PARTIAL_FILL = 0x01;
+    uint256 private constant _REQUIRES_EXTRA_ETH = 0x02;
+    uint256 private constant _SHOULD_CLAIM = 0x04;
+    uint256 private constant _BURN_FROM_MSG_SENDER = 0x08;
+    uint256 private constant _BURN_FROM_TX_ORIGIN = 0x10;
+
     IDexHandlerFactory public factory;
+    address public owner;
+
+    address public immutable WETH;
+    address private constant ETH_ADDRESS = address(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE);
 
     struct SwapStep {
         address router;
@@ -18,46 +37,50 @@ contract Aggregator {
         uint24 fee; // only for V3 
     } // optimize struct storage slots
 
+    modifier onlyOwner {
+        require(msg.sender == owner, "Only owner");
+        _;
+    }
+
     constructor(address _factory) {
         require(_factory != address(0), "Invalid factory address");
         factory = IDexHandlerFactory(_factory);
+        owner = msg.sender;
     }
 
+    receive() external payable {}
 
+    function getBalance(IERC20 token, address account) internal view returns(uint256) {
+        token.uniBalanceOf(account);
+    }
 
-    function swapMultiHop(
+    function isETH(IERC20 token) internal view returns (bool iseth) {
+        iseth = token.isETH();
+    }
+
+    function FlexSwap(
+        IAggregatorExecutor executor,
         SwapMultiHop calldata params
-    ) public returns(uint256 amountOut) {
-        require(params.amountIn != 0, "The amount for swap is zero");
-        address dexHandler;
-        uint256 amountIn;
+    ) external returns(uint256 amountOut) {
+        bytes memory result = address(this).functionDelegateCall(abi.encodeWithSelector(this.swap.selector, executor, params));
+        uint256 returnAmount = abi.decode(result, (uint256));
+    }
 
-        IERC20(params.tokenIn[0]).transferFrom(msg.sender, address(this), params.amountIn);
+    function swap(
+        IAggregatorExecutor executor,
+        SwapMultiHop calldata params
+    ) external returns(uint256 amountOut) {
+        executor.swapMultiHop(params, factory);
+    }
 
-        for (uint256 i = 0; i < params.routers.length; i++) {
-            address _tokenIn = params.tokenIn[i];
-            // address tokenOut = params[i].tokenOut; 
-            dexHandler = factory.dexHandlers(params.dexHandlerIds[i]);
-            IERC20(_tokenIn).approve(params.routers[i], params.amountIn);
-            bytes memory dataSend = abi.encode(address(params.routers[i]), bytes(params.data[i]));
-            (bool success, bytes memory result) = dexHandler.delegatecall(
-                abi.encodeWithSignature("executeSwap(address,bytes)", params.routers[i], params.data[i])
-            );
-            require(success, "Swap failed");
-            amountOut = abi.decode(result, (uint256));
-            amountIn = amountOut;
+    function swapMultiRoute(
+        SwapMultiHop[] calldata params
+    ) external returns(uint256 amountOut) {
+        for (uint256 i = 0; i < params.length; i++) {
+            amountOut += swapMultiHop(params[i]);
         }
     }
-
-    // function swapMultiRoute(
-    //     address[] calldata routers, 
-    //     uint256[] calldata dexHandlerIds,
-    //     address[] calldata tokenIn,
-    //     uint256[] amountIn, 
-    //     bytes[] calldata data
-    // ) {
-
-    // }
+    
 
 
 }

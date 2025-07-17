@@ -40,7 +40,6 @@ async function main() {
             process.env.TOKENA,
             process.env.TOKENB,
             500,
-            process.env.PUBLIC_KEY,
             UINT256_MAX,
             10,
             0,

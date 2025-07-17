@@ -39,8 +39,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\Aggregator.sol": {
-      "lastModificationDate": 1752052438244,
-      "contentHash": "da1912b4725a488bc0db5ef2777073d5",
+      "lastModificationDate": 1752743472749,
+      "contentHash": "e0d57d13e59a52d6169bbee904273eec",
       "sourceName": "contracts/Aggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -71,7 +71,11 @@
         "@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "@openzeppelin/contracts/token/ERC20/ERC20.sol",
         "./interfaces/IDexHandlerFactory.sol",
-        "./structs/SAggregator.sol"
+        "./interfaces/IAggregatorExecutor.sol",
+        "./structs/SAggregator.sol",
+        "./libraries/Address.sol",
+        "./libraries/SafeERC20.sol",
+        "./libraries/UniERC20.sol"
       ],
       "versionPragmas": [
         "^0.8.24"
@@ -310,8 +314,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\UniswapV3Handler.sol": {
-      "lastModificationDate": 1752051487326,
-      "contentHash": "53d75a45dcc015aa3a40f210c39a46d4",
+      "lastModificationDate": 1752141203721,
+      "contentHash": "30175f0a6c1749a543684437e3c3dc43",
       "sourceName": "contracts/UniswapV3Handler.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -387,8 +391,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\structs\\SAggregator.sol": {
-      "lastModificationDate": 1752052465939,
-      "contentHash": "909073cbeee0dfe0c0785e17cdc676a5",
+      "lastModificationDate": 1752743039594,
+      "contentHash": "ed625ce220da215a606f01fdf602e9b9",
       "sourceName": "contracts/structs/SAggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -652,6 +656,324 @@
       ],
       "artifacts": [
         "IDexHandlerFactory"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\libraries\\Address.sol": {
+      "lastModificationDate": 1752130236080,
+      "contentHash": "4340ce3059ba131ae40eec596a4d198c",
+      "sourceName": "contracts/libraries/Address.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\libraries\\SafeERC20.sol": {
+      "lastModificationDate": 1752135987183,
+      "contentHash": "927918fa5ccfbc04a845b4f4191e9aaf",
+      "sourceName": "contracts/libraries/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\libraries\\UniERC20.sol": {
+      "lastModificationDate": 1752740902758,
+      "contentHash": "d3836d6d3db010514f867885e23a02a7",
+      "sourceName": "contracts/libraries/UniERC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "UniERC20"
+      ]
+    },
+    "C:\\Users\\admin\\AppData\\Local\\Yarn\\Berry\\cache\\@openzeppelin-contracts-npm-5.3.0-731ea0cb78-10c0.zip\\node_modules\\@openzeppelin\\contracts\\utils\\math\\Math.sol": {
+      "lastModificationDate": 456789000000,
+      "contentHash": "5ec781e33d3a9ac91ffdc83d94420412",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Panic.sol",
+        "./SafeCast.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "C:\\Users\\admin\\AppData\\Local\\Yarn\\Berry\\cache\\@openzeppelin-contracts-npm-5.3.0-731ea0cb78-10c0.zip\\node_modules\\@openzeppelin\\contracts\\utils\\Panic.sol": {
+      "lastModificationDate": 456789000000,
+      "contentHash": "2133dc13536b4a6a98131e431fac59e1",
+      "sourceName": "@openzeppelin/contracts/utils/Panic.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Panic"
+      ]
+    },
+    "C:\\Users\\admin\\AppData\\Local\\Yarn\\Berry\\cache\\@openzeppelin-contracts-npm-5.3.0-731ea0cb78-10c0.zip\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SafeCast.sol": {
+      "lastModificationDate": 456789000000,
+      "contentHash": "2adca1150f58fc6f3d1f0a0f22ee7cca",
+      "sourceName": "@openzeppelin/contracts/utils/math/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\AggregatorExecutor.sol": {
+      "lastModificationDate": 1752743104589,
+      "contentHash": "e3d4c975549947392a32bc3384db3d06",
+      "sourceName": "contracts/AggregatorExecutor.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "./interfaces/IDexHandlerFactory.sol",
+        "./structs/SAggregator.sol",
+        "./libraries/Address.sol",
+        "./libraries/SafeERC20.sol",
+        "./libraries/UniERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "AggregatorExecutor"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\interfaces\\IAggregatorExecutor.sol": {
+      "lastModificationDate": 1752743558598,
+      "contentHash": "66c682e9c2429306e71cc553de5fd7c7",
+      "sourceName": "contracts/interfaces/IAggregatorExecutor.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./IDexHandlerFactory.sol",
+        "../structs/SAggregator.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IAggregatorExecutor"
       ]
     }
   }

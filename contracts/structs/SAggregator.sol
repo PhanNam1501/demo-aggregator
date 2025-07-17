@@ -6,7 +6,6 @@ struct UniswapV3SwapData{
     uint256 tokenIn;
     uint256 tokenOut;
     uint24 fee;
-    address recipient;
     uint256 dealine;
     uint256 amountIn;
     uint256 amountOutMin;
@@ -19,4 +18,5 @@ struct SwapMultiHop {
     address[] tokenIn;
     uint256 amountIn;
     bytes[] data;
+    bytes flags;
 }
