@@ -5,7 +5,7 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {IDexHandlerFactory} from "./interfaces/IDexHandlerFactory.sol";
 import {IAggregatorExecutor} from "./interfaces/IAggregatorExecutor.sol";
-import {SwapMultiHop} from "./structs/SAggregator.sol";
+import {SwapMultiHop, SwapDescription} from "./structs/SAggregator.sol";
 import {Address} from "./libraries/Address.sol";
 import {SafeERC20} from "./libraries/SafeERC20.sol";
 import {UniERC20} from "./libraries/UniERC20.sol";
@@ -57,25 +57,25 @@ contract Aggregator {
     //     iseth = token.isETH();
     // }
 
-    function FlexSwap(
+    function flexSwap(
         IAggregatorExecutor executor,
-        SwapMultiHop calldata params
-    ) external returns (uint256 amountOut) {
-        bytes memory result = address(this).functionDelegateCall(
-            abi.encodeWithSelector(this.swap.selector, executor, params)
-        );
+        SwapMultiHop calldata params,
+        SwapDescription calldata desc
+    ) external returns(uint256 amountOut) {
+        bytes memory result = address(this).functionDelegateCall(abi.encodeWithSelector(this.swap.selector, executor, params));
         uint256 returnAmount = abi.decode(result, (uint256));
     }
 
     function swap(
         IAggregatorExecutor executor,
-        SwapMultiHop calldata params
-    ) external returns (uint256 amountOut) {
+        SwapMultiHop calldata params,
+        SwapDescription calldata desc
+    ) external returns(uint256 amountOut) {
         uint256 flag = params.flags;
-        IERC20 tokenOut = IERC20(params.tokenIn[params.tokenIn.length - 1]);
+        IERC20 tokenOut = IERC20(params.tokenIn[params.tokenIn.length]);
 
         uint256 balanceDstBefore = tokenOut.uniBalanceOf(msg.sender);
-        executor.swapMultiHop(params, factory);
+        executor.swapMultiHop(params, desc, factory);
 
         uint256 balanceDstAfter = tokenOut.uniBalanceOf(msg.sender);
     }

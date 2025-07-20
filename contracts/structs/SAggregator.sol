@@ -26,7 +26,12 @@ struct SwapMultiHop {
     address[] routers;
     uint8[] dexHandlerIds;
     address[] tokenIn;
-    uint256 amountIn;
     bytes[] data;
+}
+
+struct SwapDescription {
+    address tokenIn;
+    address tokenOut;
+    uint256 amount;
     uint256 flags;
 }

@@ -52,7 +52,7 @@ async function main() {
         dexHandlerIds: [0],
         tokenIn: [process.env.TOKENA],
         amountIn: 10,
-        data: [data]
+        data: [data] 
     };
 
     console.log("Ready to swap");

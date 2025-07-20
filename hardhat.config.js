@@ -38,5 +38,11 @@ module.exports = {
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       hardfork: "cancun",
     },
+    sepolia: {
+      url: "https://eth-sepolia.public.blastapi.io", // hoặc Infura/Alchemy nếu dùng
+      chainId: 11155111,
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      hardfork: "cancun",
+    },
   },
 };
