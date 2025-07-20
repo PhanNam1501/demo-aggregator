@@ -43,6 +43,33 @@
           "type": "tuple"
         },
         {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "tokenIn",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "tokenOut",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountIn",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "flags",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct SwapDescription",
+          "name": "desc",
+          "type": "tuple"
+        },
+        {
           "internalType": "contract IDexHandlerFactory",
           "name": "factory",
           "type": "address"

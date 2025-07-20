@@ -4,7 +4,7 @@ pragma solidity ^0.8.24;
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {IDexHandlerFactory} from "./interfaces/IDexHandlerFactory.sol";
-import {SwapMultiHop} from "./structs/SAggregator.sol";
+import {SwapMultiHop, SwapDescription} from "./structs/SAggregator.sol";
 import {Address} from "./libraries/Address.sol";
 import {SafeERC20} from "./libraries/SafeERC20.sol";
 import {UniERC20} from "./libraries/UniERC20.sol";
@@ -14,6 +14,7 @@ contract AggregatorExecutor {
     
     function swapMultiHop(
         SwapMultiHop calldata params,
+        SwapDescription calldata desc,
         IDexHandlerFactory factory
     ) external returns(uint256 amountOut) {
         require(params.amountIn != 0, "The amount for swap is zero");
