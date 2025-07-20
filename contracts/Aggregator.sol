@@ -62,7 +62,7 @@ contract Aggregator {
         SwapMultiHop calldata params,
         SwapDescription calldata desc
     ) external returns(uint256 amountOut) {
-        bytes memory result = address(this).functionDelegateCall(abi.encodeWithSelector(this.swap.selector, executor, params));
+        bytes memory result = address(this).functionDelegateCall(abi.encodeWithSelector(this.swap.selector, executor, params, desc));
         uint256 returnAmount = abi.decode(result, (uint256));
     }
 
@@ -71,12 +71,37 @@ contract Aggregator {
         SwapMultiHop calldata params,
         SwapDescription calldata desc
     ) external returns(uint256 amountOut) {
-        uint256 flag = params.flags;
-        IERC20 tokenOut = IERC20(params.tokenIn[params.tokenIn.length]);
-
+        uint256 flag = desc.flags;
+        IERC20 tokenIn = IERC20(desc.tokenIn);
+        IERC20 tokenOut = IERC20(desc.tokenOut);
+        tokenIn.transferFrom(msg.sender, address(this), desc.amountIn);
+        tokenIn.uniApprove(address(executor), desc.amountIn);
+        uint256 balanceSrcBefore = tokenIn.uniBalanceOf(msg.sender);
+        require(balanceSrcBefore > 0, "No higher than 0");
         uint256 balanceDstBefore = tokenOut.uniBalanceOf(msg.sender);
-        executor.swapMultiHop(params, desc, factory);
-
+        amountOut = executor.swapMultiHop(params, desc, factory);
+        uint256 balanceSrcAfter = tokenIn.uniBalanceOf(msg.sender);
         uint256 balanceDstAfter = tokenOut.uniBalanceOf(msg.sender);
+
+        uint256 spentAmount = balanceSrcBefore - balanceSrcAfter;
+        uint256 returnAmount = balanceDstAfter - balanceDstBefore;
+        amountOut = returnAmount;
+        _checkReturnAmount(spentAmount, returnAmount, desc);
+    }
+
+    function _checkReturnAmount(
+    uint256 spentAmount,
+    uint256 returnAmount,
+    SwapDescription memory desc
+  ) internal pure {
+    if (_flagsChecked(desc.flags, _PARTIAL_FILL)) {
+      require(returnAmount * desc.amountIn >= desc.minReturnAmount * spentAmount, 'Return amount is not enough');
+    } else {
+      require(returnAmount >= desc.minReturnAmount, 'Return amount is not enough');
+    }
+  }
+
+    function _flagsChecked(uint256 number, uint256 flag) internal pure returns (bool) {
+        return number & flag != 0;
     }
 }

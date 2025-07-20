@@ -39,8 +39,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\Aggregator.sol": {
-      "lastModificationDate": 1753019723927,
-      "contentHash": "4b03355e936d9cd4f56df18fe24a92f4",
+      "lastModificationDate": 1753032454586,
+      "contentHash": "7ae2394e6dc6168a71a6b9706cf35ded",
       "sourceName": "contracts/Aggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -314,8 +314,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\UniswapV3Handler.sol": {
-      "lastModificationDate": 1752141203721,
-      "contentHash": "30175f0a6c1749a543684437e3c3dc43",
+      "lastModificationDate": 1753020584938,
+      "contentHash": "5dacf7ccb743acd79141aa2ac2133924",
       "sourceName": "contracts/UniswapV3Handler.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -354,8 +354,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\interfaces\\IUniswapV2SwapRouter.sol": {
-      "lastModificationDate": 1751626449864,
-      "contentHash": "0d0c0782ced92ff5af2140f3c946ebf5",
+      "lastModificationDate": 1753020584939,
+      "contentHash": "5c38d87e45cd1ebbf97492d043ae9313",
       "sourceName": "contracts/interfaces/IUniswapV2SwapRouter.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -384,15 +384,15 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.5.0"
+        ">=0.7.5"
       ],
       "artifacts": [
-        "IUniswapV2Pair"
+        "IUniswapV2SwapRouter"
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\structs\\SAggregator.sol": {
-      "lastModificationDate": 1753018788121,
-      "contentHash": "17a721da0bfdd87a03e6ce3e146c6461",
+      "lastModificationDate": 1753024263041,
+      "contentHash": "2aeb50a04bac94937ca838189e9d709b",
       "sourceName": "contracts/structs/SAggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -891,8 +891,8 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\AggregatorExecutor.sol": {
-      "lastModificationDate": 1753019154114,
-      "contentHash": "2caf6bc81f3632f8f53349ff1e666dd5",
+      "lastModificationDate": 1753022963175,
+      "contentHash": "48d6b125bf1bd6849a802af5f1b07d51",
       "sourceName": "contracts/AggregatorExecutor.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -936,7 +936,7 @@
       ]
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\interfaces\\IAggregatorExecutor.sol": {
-      "lastModificationDate": 1753019805488,
+      "lastModificationDate": 1753020694091,
       "contentHash": "51484670145e329639365fdfe8ab218d",
       "sourceName": "contracts/interfaces/IAggregatorExecutor.sol",
       "solcConfig": {
@@ -975,6 +975,39 @@
       "artifacts": [
         "IAggregatorExecutor"
       ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\UniswapV2Handler.sol": {
+      "lastModificationDate": 1753022828321,
+      "contentHash": "d38e0620220e11d75ebd429193f403ad",
+      "sourceName": "contracts/UniswapV2Handler.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
     }
   }
 }

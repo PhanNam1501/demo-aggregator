@@ -32,6 +32,7 @@ struct SwapMultiHop {
 struct SwapDescription {
     address tokenIn;
     address tokenOut;
-    uint256 amount;
+    uint256 amountIn;
+    uint256 minReturnAmount;
     uint256 flags;
 }

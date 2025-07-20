@@ -17,16 +17,16 @@ contract AggregatorExecutor {
         SwapDescription calldata desc,
         IDexHandlerFactory factory
     ) external returns(uint256 amountOut) {
-        require(params.amountIn != 0, "The amount for swap is zero");
+        require(desc.amountIn != 0, "The amount for swap is zero");
         address dexHandler;
-        uint256 amountIn;
+        uint256 amountIn = desc.amountIn;
 
-        IERC20(params.tokenIn[0]).transferFrom(msg.sender, address(this), params.amountIn);
+        IERC20(desc.tokenIn).transferFrom(msg.sender, address(this), desc.amountIn);
 
         for (uint8 i = 0; i < params.routers.length; i++) {
             address _tokenIn = params.tokenIn[i];
             dexHandler = factory.dexHandlers(params.dexHandlerIds[i]);
-            IERC20(_tokenIn).approve(params.routers[i], params.amountIn);
+            IERC20(_tokenIn).approve(params.routers[i], amountIn);
             bytes memory result = address(dexHandler).functionDelegateCall(abi.encodeWithSignature("executeSwap(address,bytes)", params.routers[i], params.data[i]));
             amountOut = abi.decode(result, (uint256));
             amountIn = amountOut;

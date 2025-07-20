@@ -1,0 +1,103 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IUniswapV2SwapRouter",
+  "sourceName": "contracts/interfaces/IUniswapV2SwapRouter.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address[]",
+              "name": "path",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountToSwap",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountMinMax",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isExactIn",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "deadline",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IUniswapV2SwapRouter.ExactTokensForTokens",
+          "name": "params",
+          "type": "tuple"
+        }
+      ],
+      "name": "swapExactTokensForTokens",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "amounts",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address[]",
+              "name": "path",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountToSwap",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountMinMax",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isExactIn",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "deadline",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IUniswapV2SwapRouter.TokensForExactTokens",
+          "name": "params",
+          "type": "tuple"
+        }
+      ],
+      "name": "swapTokensForExactTokens",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "amounts",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
