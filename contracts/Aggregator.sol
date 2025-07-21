@@ -61,8 +61,10 @@ contract Aggregator {
         IAggregatorExecutor executor,
         SwapMultiHop calldata params,
         SwapDescription calldata desc
-    ) external returns(uint256 amountOut) {
-        bytes memory result = address(this).functionDelegateCall(abi.encodeWithSelector(this.swap.selector, executor, params, desc));
+    ) external returns (uint256 amountOut) {
+        bytes memory result = address(this).functionDelegateCall(
+            abi.encodeWithSelector(this.swap.selector, executor, params, desc)
+        );
         uint256 returnAmount = abi.decode(result, (uint256));
     }
 
@@ -70,7 +72,7 @@ contract Aggregator {
         IAggregatorExecutor executor,
         SwapMultiHop calldata params,
         SwapDescription calldata desc
-    ) external returns(uint256 amountOut) {
+    ) external returns (uint256 amountOut) {
         uint256 flag = desc.flags;
         IERC20 tokenIn = IERC20(desc.tokenIn);
         IERC20 tokenOut = IERC20(desc.tokenOut);
@@ -90,18 +92,28 @@ contract Aggregator {
     }
 
     function _checkReturnAmount(
-    uint256 spentAmount,
-    uint256 returnAmount,
-    SwapDescription memory desc
-  ) internal pure {
-    if (_flagsChecked(desc.flags, _PARTIAL_FILL)) {
-      require(returnAmount * desc.amountIn >= desc.minReturnAmount * spentAmount, 'Return amount is not enough');
-    } else {
-      require(returnAmount >= desc.minReturnAmount, 'Return amount is not enough');
+        uint256 spentAmount,
+        uint256 returnAmount,
+        SwapDescription memory desc
+    ) internal pure {
+        if (_flagsChecked(desc.flags, _PARTIAL_FILL)) {
+            require(
+                returnAmount * desc.amountIn >=
+                    desc.minReturnAmount * spentAmount,
+                "Return amount is not enough"
+            );
+        } else {
+            require(
+                returnAmount >= desc.minReturnAmount,
+                "Return amount is not enough"
+            );
+        }
     }
-  }
 
-    function _flagsChecked(uint256 number, uint256 flag) internal pure returns (bool) {
+    function _flagsChecked(
+        uint256 number,
+        uint256 flag
+    ) internal pure returns (bool) {
         return number & flag != 0;
     }
 }
