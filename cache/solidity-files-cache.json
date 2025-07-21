@@ -1,6 +1,7 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
+<<<<<<< Updated upstream
     "C:\\Users\\admin\\AppData\\Local\\Yarn\\Berry\\cache\\@openzeppelin-contracts-npm-5.3.0-731ea0cb78-10c0.zip\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
       "lastModificationDate": 456789000000,
       "contentHash": "8f19f64d2adadf448840908bbaf431c8",
@@ -41,6 +42,11 @@
     "D:\\ftech-company\\demo-aggregator\\contracts\\Aggregator.sol": {
       "lastModificationDate": 1752745770632,
       "contentHash": "c1dc12eee4b2ee5788a47fc88b86ae4b",
+=======
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\Aggregator.sol": {
+      "lastModificationDate": 1753059951214,
+      "contentHash": "7ae2394e6dc6168a71a6b9706cf35ded",
+>>>>>>> Stashed changes
       "sourceName": "contracts/Aggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -84,6 +90,7 @@
         "Aggregator"
       ]
     },
+<<<<<<< Updated upstream
     "D:\\ftech-company\\demo-aggregator\\contracts\\FTBeacon.sol": {
       "lastModificationDate": 1751622688244,
       "contentHash": "e8f68a0189307f2c365fa449dade4759",
@@ -660,6 +667,10 @@
     },
     "D:\\ftech-company\\demo-aggregator\\contracts\\libraries\\Address.sol": {
       "lastModificationDate": 1752130236080,
+=======
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\libraries\\Address.sol": {
+      "lastModificationDate": 1752744778394,
+>>>>>>> Stashed changes
       "contentHash": "4340ce3059ba131ae40eec596a4d198c",
       "sourceName": "contracts/libraries/Address.sol",
       "solcConfig": {
@@ -695,10 +706,10 @@
         "Address"
       ]
     },
-    "D:\\ftech-company\\demo-aggregator\\contracts\\libraries\\SafeERC20.sol": {
-      "lastModificationDate": 1752135987183,
-      "contentHash": "927918fa5ccfbc04a845b4f4191e9aaf",
-      "sourceName": "contracts/libraries/SafeERC20.sol",
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\structs\\SAggregator.sol": {
+      "lastModificationDate": 1753059951246,
+      "contentHash": "2aeb50a04bac94937ca838189e9d709b",
+      "sourceName": "contracts/structs/SAggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -724,19 +735,51 @@
           }
         }
       },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-        "./Address.sol"
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
       ],
+      "artifacts": []
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\interfaces\\IDexHandlerFactory.sol": {
+      "lastModificationDate": 1752736892075,
+      "contentHash": "627b2a52ea2cad94b255db800aa35373",
+      "sourceName": "contracts/interfaces/IDexHandlerFactory.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
       "versionPragmas": [
         "^0.8.24"
       ],
       "artifacts": [
-        "SafeERC20"
+        "IDexHandlerFactory"
       ]
     },
-    "D:\\ftech-company\\demo-aggregator\\contracts\\libraries\\UniERC20.sol": {
-      "lastModificationDate": 1752740902758,
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\libraries\\UniERC20.sol": {
+      "lastModificationDate": 1752744778410,
       "contentHash": "d3836d6d3db010514f867885e23a02a7",
       "sourceName": "contracts/libraries/UniERC20.sol",
       "solcConfig": {
@@ -776,8 +819,168 @@
         "UniERC20"
       ]
     },
-    "C:\\Users\\admin\\AppData\\Local\\Yarn\\Berry\\cache\\@openzeppelin-contracts-npm-5.3.0-731ea0cb78-10c0.zip\\node_modules\\@openzeppelin\\contracts\\utils\\math\\Math.sol": {
-      "lastModificationDate": 456789000000,
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\libraries\\SafeERC20.sol": {
+      "lastModificationDate": 1752744778410,
+      "contentHash": "927918fa5ccfbc04a845b4f4191e9aaf",
+      "sourceName": "contracts/libraries/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\interfaces\\IAggregatorExecutor.sol": {
+      "lastModificationDate": 1753059951246,
+      "contentHash": "51484670145e329639365fdfe8ab218d",
+      "sourceName": "contracts/interfaces/IAggregatorExecutor.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./IDexHandlerFactory.sol",
+        "../structs/SAggregator.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IAggregatorExecutor"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
+      "lastModificationDate": 1753064694110,
+      "contentHash": "9261adf6457863de3e9892f51317ec89",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.16"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
+      "lastModificationDate": 1753064694107,
+      "contentHash": "59dfce11284f2636db261df9b6a18f81",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol",
+        "../../interfaces/draft-IERC6093.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\math\\Math.sol": {
+      "lastModificationDate": 1753064693638,
       "contentHash": "5ec781e33d3a9ac91ffdc83d94420412",
       "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
       "solcConfig": {
@@ -816,8 +1019,8 @@
         "Math"
       ]
     },
-    "C:\\Users\\admin\\AppData\\Local\\Yarn\\Berry\\cache\\@openzeppelin-contracts-npm-5.3.0-731ea0cb78-10c0.zip\\node_modules\\@openzeppelin\\contracts\\utils\\Panic.sol": {
-      "lastModificationDate": 456789000000,
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\Panic.sol": {
+      "lastModificationDate": 1753064693667,
       "contentHash": "2133dc13536b4a6a98131e431fac59e1",
       "sourceName": "@openzeppelin/contracts/utils/Panic.sol",
       "solcConfig": {
@@ -853,8 +1056,8 @@
         "Panic"
       ]
     },
-    "C:\\Users\\admin\\AppData\\Local\\Yarn\\Berry\\cache\\@openzeppelin-contracts-npm-5.3.0-731ea0cb78-10c0.zip\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SafeCast.sol": {
-      "lastModificationDate": 456789000000,
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SafeCast.sol": {
+      "lastModificationDate": 1753064693653,
       "contentHash": "2adca1150f58fc6f3d1f0a0f22ee7cca",
       "sourceName": "@openzeppelin/contracts/utils/math/SafeCast.sol",
       "solcConfig": {
@@ -890,9 +1093,207 @@
         "SafeCast"
       ]
     },
+<<<<<<< Updated upstream
     "D:\\ftech-company\\demo-aggregator\\contracts\\AggregatorExecutor.sol": {
       "lastModificationDate": 1752744248861,
       "contentHash": "1b09a7632d0a68e9f2d10774e491e84c",
+=======
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\interfaces\\draft-IERC6093.sol": {
+      "lastModificationDate": 1753064694964,
+      "contentHash": "5041977bbe908de2e6ed0270447f79ad",
+      "sourceName": "@openzeppelin/contracts/interfaces/draft-IERC6093.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.4"
+      ],
+      "artifacts": [
+        "IERC1155Errors",
+        "IERC20Errors",
+        "IERC721Errors"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
+      "lastModificationDate": 1753064693522,
+      "contentHash": "67bfbc07588eb8683b3fd8f6f909563e",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol": {
+      "lastModificationDate": 1753064694095,
+      "contentHash": "513778b30d2750f5d2b9b19bbcf748a5",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\UniswapV3Handler.sol": {
+      "lastModificationDate": 1753059951238,
+      "contentHash": "5dacf7ccb743acd79141aa2ac2133924",
+      "sourceName": "contracts/UniswapV3Handler.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./interfaces/IUniswapV3SwapRouter.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "UniswapV3Handler"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\interfaces\\IUniswapV3SwapRouter.sol": {
+      "lastModificationDate": 1752736892075,
+      "contentHash": "e4df1e678b2e85783a6450ae0b863b9c",
+      "sourceName": "contracts/interfaces/IUniswapV3SwapRouter.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IUniswapV3SwapRouter"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\AggregatorExecutor.sol": {
+      "lastModificationDate": 1753064995077,
+      "contentHash": "48d6b125bf1bd6849a802af5f1b07d51",
+>>>>>>> Stashed changes
       "sourceName": "contracts/AggregatorExecutor.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -935,10 +1336,248 @@
         "AggregatorExecutor"
       ]
     },
+<<<<<<< Updated upstream
     "D:\\ftech-company\\demo-aggregator\\contracts\\interfaces\\IAggregatorExecutor.sol": {
       "lastModificationDate": 1752743558598,
       "contentHash": "66c682e9c2429306e71cc553de5fd7c7",
       "sourceName": "contracts/interfaces/IAggregatorExecutor.sol",
+=======
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\DexHandlerFactory.sol": {
+      "lastModificationDate": 1752736892075,
+      "contentHash": "98629a79fd167214a0fbd37e3c3bf1e6",
+      "sourceName": "contracts/DexHandlerFactory.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IDexHandlerFactory.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "DexHandlerFactory"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\access\\Ownable.sol": {
+      "lastModificationDate": 1753064693799,
+      "contentHash": "d3c790edc9ccf808a17c5a6cd13614fd",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\proxy\\beacon\\UpgradeableBeacon.sol": {
+      "lastModificationDate": 1753064693856,
+      "contentHash": "199aceb57a6d0b08264d822f36b20494",
+      "sourceName": "@openzeppelin/contracts/proxy/beacon/UpgradeableBeacon.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IBeacon.sol",
+        "../../access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "UpgradeableBeacon"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\proxy\\beacon\\IBeacon.sol": {
+      "lastModificationDate": 1753064693854,
+      "contentHash": "ee2e46607ed2be58bd554306d068acba",
+      "sourceName": "@openzeppelin/contracts/proxy/beacon/IBeacon.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.16"
+      ],
+      "artifacts": [
+        "IBeacon"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\FTBeacon.sol": {
+      "lastModificationDate": 1752736892075,
+      "contentHash": "e8f68a0189307f2c365fa449dade4759",
+      "sourceName": "contracts/FTBeacon.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/proxy/beacon/UpgradeableBeacon.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "FTBeacon"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\interfaces\\IUniswapV2SwapRouter.sol": {
+      "lastModificationDate": 1753065331293,
+      "contentHash": "d7dfe07432e711da37f54a811bc1efad",
+      "sourceName": "contracts/interfaces/IUniswapV2SwapRouter.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IUniswapV2SwapRouter"
+      ]
+    },
+    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\UniswapV2Handler.sol": {
+      "lastModificationDate": 1753065343503,
+      "contentHash": "22b18a1e76750f69e92f2def7a400e4e",
+      "sourceName": "contracts/UniswapV2Handler.sol",
+>>>>>>> Stashed changes
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -966,14 +1605,14 @@
       },
       "imports": [
         "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-        "./IDexHandlerFactory.sol",
-        "../structs/SAggregator.sol"
+        "./interfaces/IUniswapV2SwapRouter.sol",
+        "./interfaces/IUniswapV2SwapRouter.sol"
       ],
       "versionPragmas": [
         "^0.8.24"
       ],
       "artifacts": [
-        "IAggregatorExecutor"
+        "UniswapV2Handler"
       ]
     }
   }

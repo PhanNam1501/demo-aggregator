@@ -17,7 +17,7 @@ struct UniswapV2SwapData {
     address[] path;
     uint256 amountToSwap;
     uint256 amountLimit;
-    bool isExactIn; //true -> exactIn; false -> exactOut
+    //bool isExactIn; //true -> exactIn; false -> exactOut
     //uint24 fee;   //0.3
     uint256 deadline;
 }

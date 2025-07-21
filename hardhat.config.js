@@ -38,5 +38,20 @@ module.exports = {
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       hardfork: "cancun",
     },
+<<<<<<< Updated upstream
+=======
+    sepolia: {
+      url: "https://eth-sepolia.public.blastapi.io", // hoặc Infura/Alchemy nếu dùng
+      chainId: 11155111,
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      hardfork: "cancun",
+    },
+    sagaChainlet: {
+      url: "https://rynn-2747220808242000-1.jsonrpc.sagarpc.io",
+      chainId: 2747220808242000,
+      accounts: process.env.SAGA_PK ? [process.env.SAGA_PK] : [],
+      hardfork: "cancun",
+    },
+>>>>>>> Stashed changes
   },
 };
