@@ -75,11 +75,11 @@ contract Aggregator {
         IERC20 tokenIn = IERC20(desc.tokenIn);
         IERC20 tokenOut = IERC20(desc.tokenOut);
         tokenIn.transferFrom(msg.sender, address(this), desc.amountIn);
-        tokenIn.uniApprove(address(executor), desc.amountIn);
         uint256 balanceSrcBefore = tokenIn.uniBalanceOf(msg.sender);
-        require(balanceSrcBefore > 0, "No higher than 0");
         uint256 balanceDstBefore = tokenOut.uniBalanceOf(msg.sender);
-        amountOut = executor.swapMultiHop(params, desc, factory);
+        //amountOut = executor.swapMultiHop(params, desc, factory);
+        bytes memory result = address(executor).functionDelegateCall(abi.encodeWithSelector(IAggregatorExecutor.swapMultiHop.selector, params, desc, factory));
+        amountOut = abi.decode(result, (uint256));
         uint256 balanceSrcAfter = tokenIn.uniBalanceOf(msg.sender);
         uint256 balanceDstAfter = tokenOut.uniBalanceOf(msg.sender);
 

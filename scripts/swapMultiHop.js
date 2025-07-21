@@ -21,7 +21,7 @@ async function main() {
     const token1 = new ethers.Contract(process.env.TOKENB, erc20Abi, wallet);
     const agg_address = process.env.AGGREGATOR;
 
-    console.log("Token0", await token1.balanceOf(process.env.AGGREGATOR_EXECUTOR));
+    console.log("Token0", await token1.balanceOf(process.env.AGGREGATOR));
     
 
     // const tx1 = await token0.approve(agg_address, 100);
