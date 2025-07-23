@@ -39,10 +39,31 @@ module.exports = {
       hardfork: "cancun",
     },
     sepolia: {
-      url: "https://eth-sepolia.public.blastapi.io", // hoặc Infura/Alchemy nếu dùng
+      url: "https://eth-sepolia.public.blastapi.io",
       chainId: 11155111,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       hardfork: "cancun",
     },
+    rynn: {
+      url: "https://rynn-2747220808242000-1.jsonrpc.sagarpc.io",
+      chainId: 2747220808242000,
+      accounts: process.env.SAGA_PK ? [process.env.SAGA_PK] : [],
+    },
   },
+
+  etherscan: {
+    apiKey: {
+      'rynn': 'empty'
+    },
+    customChains: [
+      {
+        network: "rynn",
+        chainId: 2747220808242000,
+        urls: {
+          apiURL: "https://api-rynn-2747220808242000-1.sagaexplorer.io/api",
+          browserURL: "https://rynn-2747220808242000-1.sagaexplorer.io:443"
+        }
+      }
+    ]
+  }
 };
