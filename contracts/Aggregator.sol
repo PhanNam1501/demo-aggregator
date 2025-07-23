@@ -5,6 +5,7 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {IDexHandlerFactory} from "./interfaces/IDexHandlerFactory.sol";
 import {IAggregatorExecutor} from "./interfaces/IAggregatorExecutor.sol";
+import {IERC20Permit} from "./interfaces/IERC20Permit.sol";
 import {SwapMultiHop, SwapDescription} from "./structs/SAggregator.sol";
 import {Address} from "./libraries/Address.sol";
 import {SafeERC20} from "./libraries/SafeERC20.sol";
@@ -57,6 +58,10 @@ contract Aggregator {
     //     iseth = token.isETH();
     // }
 
+    function rescueFunds(address token, uint256 amount) external onlyOwner {
+        IERC20(token).uniTransfer(payable(msg.sender), amount);
+    }
+
     function flexSwap(
         IAggregatorExecutor executor,
         SwapMultiHop calldata params,
@@ -76,6 +81,7 @@ contract Aggregator {
         uint256 flag = desc.flags;
         IERC20 tokenIn = IERC20(desc.tokenIn);
         IERC20 tokenOut = IERC20(desc.tokenOut);
+        _checkShouldClaim(desc);
         tokenIn.transferFrom(msg.sender, address(this), desc.amountIn);
         uint256 balanceSrcBefore = tokenIn.uniBalanceOf(msg.sender);
         uint256 balanceDstBefore = tokenOut.uniBalanceOf(msg.sender);
@@ -91,10 +97,29 @@ contract Aggregator {
         _checkReturnAmount(spentAmount, returnAmount, desc);
     }
 
+    function _claim(IERC20 token, address dst, uint256 amount, bytes calldata permit) private {
+        if (permit.length == 32 * 7) {
+            (bool ok, ) = address(token).call(abi.encodeWithSelector(IERC20Permit.permit.selector, permit));
+            require(ok, "Permit is failed");
+        }
+
+        token.safeTransferFrom(dst, address(this), amount);
+    }
+
+    function _checkShouldClaim(
+        SwapDescription calldata desc
+    ) private {
+        if (_flagsChecked(desc.flags, _SHOULD_CLAIM)) {
+            _claim(IERC20(desc.tokenIn), address(this), desc.amountIn, desc.permit);
+        } else {
+
+        }
+    }
+
     function _checkReturnAmount(
         uint256 spentAmount,
         uint256 returnAmount,
-        SwapDescription memory desc
+        SwapDescription calldata desc
     ) internal pure {
         if (_flagsChecked(desc.flags, _PARTIAL_FILL)) {
             require(

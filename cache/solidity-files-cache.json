@@ -1,9 +1,9 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\Aggregator.sol": {
-      "lastModificationDate": 1753083751609,
-      "contentHash": "fb503b4016fc31005a183363ea65021b",
+    "D:\\ftech-company\\demo-aggregator\\contracts\\Aggregator.sol": {
+      "lastModificationDate": 1753256890149,
+      "contentHash": "bd77b035852268d4e48c79dc1215df66",
       "sourceName": "contracts/Aggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -35,6 +35,7 @@
         "@openzeppelin/contracts/token/ERC20/ERC20.sol",
         "./interfaces/IDexHandlerFactory.sol",
         "./interfaces/IAggregatorExecutor.sol",
+        "./interfaces/IERC20Permit.sol",
         "./structs/SAggregator.sol",
         "./libraries/Address.sol",
         "./libraries/SafeERC20.sol",
@@ -47,10 +48,47 @@
         "Aggregator"
       ]
     },
-    "D:\\ftech-company\\demo-aggregator\\contracts\\Aggregator.sol": {
-      "lastModificationDate": 1753032454586,
-      "contentHash": "7ae2394e6dc6168a71a6b9706cf35ded",
-      "sourceName": "contracts/Aggregator.sol",
+    "D:\\ftech-company\\demo-aggregator\\contracts\\interfaces\\IDexHandlerFactory.sol": {
+      "lastModificationDate": 1753087458753,
+      "contentHash": "0a9325de03320fe06caeb7f4a7d97fcf",
+      "sourceName": "contracts/interfaces/IDexHandlerFactory.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IDexHandlerFactory"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\interfaces\\IAggregatorExecutor.sol": {
+      "lastModificationDate": 1753020694091,
+      "contentHash": "51484670145e329639365fdfe8ab218d",
+      "sourceName": "contracts/interfaces/IAggregatorExecutor.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -88,9 +126,44 @@
         "IAggregatorExecutor"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\structs\\SAggregator.sol": {
-      "lastModificationDate": 1753082768529,
-      "contentHash": "69f33e0998ce518c87ddc9278ffd716a",
+    "D:\\ftech-company\\demo-aggregator\\contracts\\interfaces\\IERC20Permit.sol": {
+      "lastModificationDate": 1753119817809,
+      "contentHash": "f44c00120045600686f07821cbabbe97",
+      "sourceName": "contracts/interfaces/IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\structs\\SAggregator.sol": {
+      "lastModificationDate": 1753256294335,
+      "contentHash": "e24c9ebf18e56989b875b866183b3e2b",
       "sourceName": "contracts/structs/SAggregator.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -123,10 +196,10 @@
       ],
       "artifacts": []
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\libraries\\Address.sol": {
-      "lastModificationDate": 1753081738627,
-      "contentHash": "4340ce3059ba131ae40eec596a4d198c",
-      "sourceName": "contracts/libraries/Address.sol",
+    "D:\\ftech-company\\demo-aggregator\\contracts\\libraries\\SafeERC20.sol": {
+      "lastModificationDate": 1752135987183,
+      "contentHash": "927918fa5ccfbc04a845b4f4191e9aaf",
+      "sourceName": "contracts/libraries/SafeERC20.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -152,53 +225,19 @@
           }
         }
       },
-      "imports": [],
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./Address.sol"
+      ],
       "versionPragmas": [
         "^0.8.24"
       ],
       "artifacts": [
-        "Address"
+        "SafeERC20"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\interfaces\\IDexHandlerFactory.sol": {
-      "lastModificationDate": 1753082080557,
-      "contentHash": "0a9325de03320fe06caeb7f4a7d97fcf",
-      "sourceName": "contracts/interfaces/IDexHandlerFactory.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "storageLayout"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.24"
-      ],
-      "artifacts": [
-        "IDexHandlerFactory"
-      ]
-    },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\libraries\\UniERC20.sol": {
-      "lastModificationDate": 1753081738627,
+    "D:\\ftech-company\\demo-aggregator\\contracts\\libraries\\UniERC20.sol": {
+      "lastModificationDate": 1752740902758,
       "contentHash": "d3836d6d3db010514f867885e23a02a7",
       "sourceName": "contracts/libraries/UniERC20.sol",
       "solcConfig": {
@@ -238,10 +277,10 @@
         "UniERC20"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\libraries\\SafeERC20.sol": {
-      "lastModificationDate": 1753081738627,
-      "contentHash": "927918fa5ccfbc04a845b4f4191e9aaf",
-      "sourceName": "contracts/libraries/SafeERC20.sol",
+    "D:\\ftech-company\\demo-aggregator\\contracts\\libraries\\Address.sol": {
+      "lastModificationDate": 1752130236080,
+      "contentHash": "4340ce3059ba131ae40eec596a4d198c",
+      "sourceName": "contracts/libraries/Address.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -267,19 +306,53 @@
           }
         }
       },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-        "./Address.sol"
-      ],
+      "imports": [],
       "versionPragmas": [
         "^0.8.24"
       ],
       "artifacts": [
-        "SafeERC20"
+        "Address"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
-      "lastModificationDate": 1753082293598,
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
+      "lastModificationDate": 1753087615188,
+      "contentHash": "8f19f64d2adadf448840908bbaf431c8",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
+      "lastModificationDate": 1753087615183,
       "contentHash": "57d79df281f57bbb1b09214c7914f877",
       "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
       "solcConfig": {
@@ -320,45 +393,8 @@
         "ERC20"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
-      "lastModificationDate": 1753082293598,
-      "contentHash": "8f19f64d2adadf448840908bbaf431c8",
-      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "storageLayout"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "IERC20"
-      ]
-    },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\math\\Math.sol": {
-      "lastModificationDate": 1753082292473,
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\math\\Math.sol": {
+      "lastModificationDate": 1753087614959,
       "contentHash": "5ec781e33d3a9ac91ffdc83d94420412",
       "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
       "solcConfig": {
@@ -397,8 +433,8 @@
         "Math"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\Panic.sol": {
-      "lastModificationDate": 1753082292602,
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\Panic.sol": {
+      "lastModificationDate": 1753087614997,
       "contentHash": "2133dc13536b4a6a98131e431fac59e1",
       "sourceName": "@openzeppelin/contracts/utils/Panic.sol",
       "solcConfig": {
@@ -434,8 +470,8 @@
         "Panic"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SafeCast.sol": {
-      "lastModificationDate": 1753082292473,
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SafeCast.sol": {
+      "lastModificationDate": 1753087614961,
       "contentHash": "2adca1150f58fc6f3d1f0a0f22ee7cca",
       "sourceName": "@openzeppelin/contracts/utils/math/SafeCast.sol",
       "solcConfig": {
@@ -471,45 +507,8 @@
         "SafeCast"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
-      "lastModificationDate": 1753082292310,
-      "contentHash": "67bfbc07588eb8683b3fd8f6f909563e",
-      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "storageLayout"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "Context"
-      ]
-    },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\interfaces\\draft-IERC6093.sol": {
-      "lastModificationDate": 1753082294910,
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\interfaces\\draft-IERC6093.sol": {
+      "lastModificationDate": 1753087615357,
       "contentHash": "267d92fe4de67b1bdb3302c08f387dbf",
       "sourceName": "@openzeppelin/contracts/interfaces/draft-IERC6093.sol",
       "solcConfig": {
@@ -547,8 +546,45 @@
         "IERC721Errors"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol": {
-      "lastModificationDate": 1753082293589,
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
+      "lastModificationDate": 1753087614870,
+      "contentHash": "67bfbc07588eb8683b3fd8f6f909563e",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol": {
+      "lastModificationDate": 1753087615168,
       "contentHash": "794db3115001aa372c79326fcfd44b1f",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
       "solcConfig": {
@@ -586,10 +622,10 @@
         "IERC20Metadata"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\access\\Ownable.sol": {
-      "lastModificationDate": 1753082292030,
-      "contentHash": "d3c790edc9ccf808a17c5a6cd13614fd",
-      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+    "D:\\ftech-company\\demo-aggregator\\contracts\\UniswapV3Handler.sol": {
+      "lastModificationDate": 1753020584938,
+      "contentHash": "5dacf7ccb743acd79141aa2ac2133924",
+      "sourceName": "contracts/UniswapV3Handler.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -616,19 +652,57 @@
         }
       },
       "imports": [
-        "../utils/Context.sol"
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./interfaces/IUniswapV3SwapRouter.sol"
       ],
       "versionPragmas": [
-        "^0.8.20"
+        "^0.8.24"
       ],
       "artifacts": [
-        "Ownable"
+        "UniswapV3Handler"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\proxy\\beacon\\UpgradeableBeacon.sol": {
-      "lastModificationDate": 1753082292731,
-      "contentHash": "199aceb57a6d0b08264d822f36b20494",
-      "sourceName": "@openzeppelin/contracts/proxy/beacon/UpgradeableBeacon.sol",
+    "D:\\ftech-company\\demo-aggregator\\contracts\\interfaces\\IUniswapV3SwapRouter.sol": {
+      "lastModificationDate": 1751883393212,
+      "contentHash": "e4df1e678b2e85783a6450ae0b863b9c",
+      "sourceName": "contracts/interfaces/IUniswapV3SwapRouter.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IUniswapV3SwapRouter"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\UniswapV2Handler.sol": {
+      "lastModificationDate": 1753087458753,
+      "contentHash": "e8162a0336b959f6b8794926633b85fb",
+      "sourceName": "contracts/UniswapV2Handler.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -655,20 +729,99 @@
         }
       },
       "imports": [
-        "./IBeacon.sol",
-        "../../access/Ownable.sol"
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./interfaces/IUniswapV2SwapRouter.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "UniswapV2Handler"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\interfaces\\IUniswapV2SwapRouter.sol": {
+      "lastModificationDate": 1753087458754,
+      "contentHash": "580136f01c84df614d65f1f1e7877c01",
+      "sourceName": "contracts/interfaces/IUniswapV2SwapRouter.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IUniswapV2SwapRouter"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\Arrays.sol": {
+      "lastModificationDate": 1753087614801,
+      "contentHash": "87b3640dbda6477c44a91647d48ff29c",
+      "sourceName": "@openzeppelin/contracts/utils/Arrays.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Comparators.sol",
+        "./SlotDerivation.sol",
+        "./StorageSlot.sol",
+        "./math/Math.sol"
       ],
       "versionPragmas": [
         "^0.8.20"
       ],
       "artifacts": [
-        "UpgradeableBeacon"
+        "Arrays"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\proxy\\beacon\\IBeacon.sol": {
-      "lastModificationDate": 1753082292731,
-      "contentHash": "0a5c323fd908535580597848b8e550fb",
-      "sourceName": "@openzeppelin/contracts/proxy/beacon/IBeacon.sol",
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\StorageSlot.sol": {
+      "lastModificationDate": 1753087615018,
+      "contentHash": "e656d64c4ce918f3d13030b91c935134",
+      "sourceName": "@openzeppelin/contracts/utils/StorageSlot.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -699,13 +852,87 @@
         "^0.8.20"
       ],
       "artifacts": [
-        "IBeacon"
+        "StorageSlot"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\FTBeacon.sol": {
-      "lastModificationDate": 1753081738627,
-      "contentHash": "e8f68a0189307f2c365fa449dade4759",
-      "sourceName": "contracts/FTBeacon.sol",
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\Comparators.sol": {
+      "lastModificationDate": 1753087614868,
+      "contentHash": "0e57405a6f979853cbfeb0df3546c3a3",
+      "sourceName": "@openzeppelin/contracts/utils/Comparators.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Comparators"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\SlotDerivation.sol": {
+      "lastModificationDate": 1753087615015,
+      "contentHash": "43950136ee6a1761d2cbed39d16bb1e0",
+      "sourceName": "@openzeppelin/contracts/utils/SlotDerivation.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SlotDerivation"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\structs\\EnumerableSet.sol": {
+      "lastModificationDate": 1753087614834,
+      "contentHash": "9dea2f1d2615534fb7e64833ae92b7c3",
+      "sourceName": "@openzeppelin/contracts/utils/structs/EnumerableSet.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -732,18 +959,58 @@
         }
       },
       "imports": [
-        "@openzeppelin/contracts/proxy/beacon/UpgradeableBeacon.sol"
+        "../Arrays.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "EnumerableSet"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\contracts\\DexHandlerFactory.sol": {
+      "lastModificationDate": 1753087458753,
+      "contentHash": "9bef67727c94676fd204ed59f9b270fe",
+      "sourceName": "contracts/DexHandlerFactory.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IDexHandlerFactory.sol",
+        "@openzeppelin/contracts/utils/structs/EnumerableSet.sol"
       ],
       "versionPragmas": [
         "^0.8.24"
       ],
       "artifacts": [
-        "FTBeacon"
+        "DexHandlerFactory"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\AggregatorExecutor.sol": {
-      "lastModificationDate": 1753082675341,
-      "contentHash": "5dfa2703ea8cc60b8ea8d1dde26dd971",
+    "D:\\ftech-company\\demo-aggregator\\contracts\\AggregatorExecutor.sol": {
+      "lastModificationDate": 1753087551891,
+      "contentHash": "48d6b125bf1bd6849a802af5f1b07d51",
       "sourceName": "contracts/AggregatorExecutor.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -786,10 +1053,10 @@
         "AggregatorExecutor"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\Arrays.sol": {
-      "lastModificationDate": 1753082292039,
-      "contentHash": "87b3640dbda6477c44a91647d48ff29c",
-      "sourceName": "@openzeppelin/contracts/utils/Arrays.sol",
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\access\\Ownable.sol": {
+      "lastModificationDate": 1753087614786,
+      "contentHash": "d3c790edc9ccf808a17c5a6cd13614fd",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -816,22 +1083,59 @@
         }
       },
       "imports": [
-        "./Comparators.sol",
-        "./SlotDerivation.sol",
-        "./StorageSlot.sol",
-        "./math/Math.sol"
+        "../utils/Context.sol"
       ],
       "versionPragmas": [
         "^0.8.20"
       ],
       "artifacts": [
-        "Arrays"
+        "Ownable"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\SlotDerivation.sol": {
-      "lastModificationDate": 1753082292649,
-      "contentHash": "43950136ee6a1761d2cbed39d16bb1e0",
-      "sourceName": "@openzeppelin/contracts/utils/SlotDerivation.sol",
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\proxy\\beacon\\UpgradeableBeacon.sol": {
+      "lastModificationDate": 1753087615058,
+      "contentHash": "199aceb57a6d0b08264d822f36b20494",
+      "sourceName": "@openzeppelin/contracts/proxy/beacon/UpgradeableBeacon.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IBeacon.sol",
+        "../../access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "UpgradeableBeacon"
+      ]
+    },
+    "D:\\ftech-company\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\proxy\\beacon\\IBeacon.sol": {
+      "lastModificationDate": 1753087615057,
+      "contentHash": "0a5c323fd908535580597848b8e550fb",
+      "sourceName": "@openzeppelin/contracts/proxy/beacon/IBeacon.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -862,87 +1166,13 @@
         "^0.8.20"
       ],
       "artifacts": [
-        "SlotDerivation"
+        "IBeacon"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\Comparators.sol": {
-      "lastModificationDate": 1753082292310,
-      "contentHash": "0e57405a6f979853cbfeb0df3546c3a3",
-      "sourceName": "@openzeppelin/contracts/utils/Comparators.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "storageLayout"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "Comparators"
-      ]
-    },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\node_modules\\@openzeppelin\\contracts\\utils\\StorageSlot.sol": {
-      "lastModificationDate": 1753082292666,
-      "contentHash": "e656d64c4ce918f3d13030b91c935134",
-      "sourceName": "@openzeppelin/contracts/utils/StorageSlot.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "storageLayout"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "StorageSlot"
-      ]
-    },
-    "D:\\ftech-company\\demo-aggregator\\contracts\\AggregatorExecutor.sol": {
-      "lastModificationDate": 1753022963175,
-      "contentHash": "48d6b125bf1bd6849a802af5f1b07d51",
-      "sourceName": "contracts/AggregatorExecutor.sol",
+    "D:\\ftech-company\\demo-aggregator\\contracts\\FTBeacon.sol": {
+      "lastModificationDate": 1751622688244,
+      "contentHash": "e8f68a0189307f2c365fa449dade4759",
+      "sourceName": "contracts/FTBeacon.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -969,99 +1199,19 @@
         }
       },
       "imports": [
-        "../Arrays.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.20"
-      ],
-      "artifacts": [
-        "EnumerableSet"
-      ]
-    },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\DexHandlerFactory.sol": {
-      "lastModificationDate": 1753083273890,
-      "contentHash": "9bef67727c94676fd204ed59f9b270fe",
-      "sourceName": "contracts/DexHandlerFactory.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "storageLayout"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/IDexHandlerFactory.sol",
-        "@openzeppelin/contracts/utils/structs/EnumerableSet.sol"
+        "@openzeppelin/contracts/proxy/beacon/UpgradeableBeacon.sol"
       ],
       "versionPragmas": [
         "^0.8.24"
       ],
       "artifacts": [
-        "DexHandlerFactory"
+        "FTBeacon"
       ]
     },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\UniswapV3Handler.sol": {
-      "lastModificationDate": 1753081738627,
-      "contentHash": "5dacf7ccb743acd79141aa2ac2133924",
-      "sourceName": "contracts/UniswapV3Handler.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "storageLayout"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-        "./interfaces/IUniswapV3SwapRouter.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.24"
-      ],
-      "artifacts": [
-        "UniswapV3Handler"
-      ]
-    },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\interfaces\\IUniswapV3SwapRouter.sol": {
-      "lastModificationDate": 1753081738627,
-      "contentHash": "e4df1e678b2e85783a6450ae0b863b9c",
-      "sourceName": "contracts/interfaces/IUniswapV3SwapRouter.sol",
+    "D:\\ftech-company\\demo-aggregator\\contracts\\base\\Permitable.sol": {
+      "lastModificationDate": 1753119955468,
+      "contentHash": "d41d8cd98f00b204e9800998ecf8427e",
+      "sourceName": "contracts/base/Permitable.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -1088,89 +1238,8 @@
         }
       },
       "imports": [],
-      "versionPragmas": [
-        ">=0.7.5"
-      ],
-      "artifacts": [
-        "IUniswapV3SwapRouter"
-      ]
-    },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\UniswapV2Handler.sol": {
-      "lastModificationDate": 1753083461826,
-      "contentHash": "e8162a0336b959f6b8794926633b85fb",
-      "sourceName": "contracts/UniswapV2Handler.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "storageLayout"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-        "./interfaces/IUniswapV2SwapRouter.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.24"
-      ],
-      "artifacts": [
-        "UniswapV2Handler"
-      ]
-    },
-    "E:\\Blockchain\\Coding\\TTS\\demo-aggregator\\contracts\\interfaces\\IUniswapV2SwapRouter.sol": {
-      "lastModificationDate": 1753083445455,
-      "contentHash": "580136f01c84df614d65f1f1e7877c01",
-      "sourceName": "contracts/interfaces/IUniswapV2SwapRouter.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "storageLayout"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.7.5"
-      ],
-      "artifacts": [
-        "IUniswapV2SwapRouter"
-      ]
+      "versionPragmas": [],
+      "artifacts": []
     }
   }
 }

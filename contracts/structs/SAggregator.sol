@@ -35,4 +35,5 @@ struct SwapDescription {
     uint256 amountIn;
     uint256 minReturnAmount;
     uint256 flags;
+    bytes permit;
 }

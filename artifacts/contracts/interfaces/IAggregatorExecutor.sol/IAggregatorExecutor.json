@@ -58,6 +58,11 @@
               "internalType": "uint256",
               "name": "flags",
               "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "permit",
+              "type": "bytes"
             }
           ],
           "internalType": "struct SwapDescription",
